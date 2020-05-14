@@ -1,0 +1,23 @@
+    <main>
+        <div class="feedback_list">
+            <?php  foreach ($row as $row): ?>
+            <ul class="feedback_block">
+                <li class="feedback_name"><?=$row['name_feedback']?></li>
+                <li class="feedback_email"><?=$row['email_feedback']?></li>
+                <li class="feedback_time"><?=$row['time_feedback']?></li>
+                <li class="feedback_text"><?=nl2br($row['text_feedback'])?></li>
+            </ul>
+            <?php endforeach; ?>
+        </div>
+        <!-- Выводим номера страниц -->
+        <div class="pages">
+            <?php $page = 0; ?>
+            <?php while ($page++ < $num_pages): ?>
+                <?php if ($page == $cur_page): ?>
+                    <b class="cur-page"><?=$page?></b>
+                <?php else: ?>
+                    <a class="num-page" href="?page=<?=$page?>"><?=$page?></a>
+                <?php endif ?>
+            <?php endwhile ?>
+        </div>
+    </main>

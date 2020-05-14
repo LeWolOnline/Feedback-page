@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>Тестовое задания DIOL</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <?php require('header.phtml');?>
+    </div>
+
+    <div id="content">
+        <?php
+
+        if (!empty($_GET['page'])){
+            if ($_GET['page'] == "add_feedback"){
+                require('feedback_add.phtml');
+            }
+            else {
+                require('feedback_list.phtml');
+            }
+        }
+        else {
+            require('feedback_list.phtml');
+        }
+
+        ?>
+    </div>
+
+    <div id="footer">
+        <?php require('footer.phtml');?>
+    </div>
+
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/jquery.validate.min.js"></script>
+<script src="../js/localization/messages_ru.min.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<header class="headline">
+    <a href="./"><h1>ОТЗЫВЫ</h1></a>
+    <?php if (!empty($_GET['page'])): ?>
+        <?php if ($_GET['page'] != "add_feedback"):?>
+            <a class="add-feedback" href="?page=add_feedback">Добавить отзыв</a>
+        <?php endif; ?>
+    <?php else: ?>
+        <a class="add-feedback" href="?page=add_feedback">Добавить отзыв</a>
+    <?php endif; ?>
+</header>
